@@ -22,14 +22,10 @@ apt install gnome-tweaks nautilus -y
 # Install Flatpak
 apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# Install Flatpak packages
-xargs flatpak install -y < flatpaks.txt
 
 # Install Jetbrains Mono font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d "/home/$username/.fonts"
-# Reload Font
-fc-cache -vf
 # Delete zip file
 rm JetBrainsMono.zip
 
