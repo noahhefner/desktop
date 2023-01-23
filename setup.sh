@@ -17,7 +17,7 @@ mkdir -p "/home/$username/Code"
 # Install CLI programs
 apt install git neofetch neovim unzip wget -y
 # Install other programs
-apt install gnome-tweaks -y
+apt install gnome-tweaks nautilus -y
 
 # Install Flatpak
 apt install flatpak -y
