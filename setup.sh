@@ -9,24 +9,18 @@ fi
 username=$(id -u -n 1000)
 builddir=$(pwd)
 
-# Update packages list and update system
-apt update
-apt upgrade -y
-
 # Create directories
 mkdir -p "/home/$username/.config"
 mkdir -p "/home/$username/.fonts"
 mkdir -p "/home/$username/Code"
 
-# Install Gnome desktop + terminal
-apt install gnome-session gnome-terminal
 # Install CLI programs
 apt install git neofetch neovim unzip wget -y
 # Install other programs
 apt install gnome-tweaks -y
 
 # Install Flatpak
-apt install flatpak
+apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # Install Flatpak packages
 xargs flatpak install -y < flatpaks.txt
