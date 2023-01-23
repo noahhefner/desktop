@@ -22,6 +22,8 @@ mkdir -p "/home/$username/Code"
 apt install gnome-session gnome-terminal
 # Install CLI programs
 apt install git neofetch neovim unzip wget -y
+# Install other programs
+apt install gnome-tweaks -y
 
 # Install Flatpak
 apt install flatpak
@@ -38,7 +40,7 @@ fc-cache -vf
 rm JetBrainsMono.zip
 
 # Install Nordzy cursor
-cd "/home/$username/Code"
+cd "/home/$username/Code" || exit
 git clone https://github.com/alvatip/Nordzy-cursors
 cd Nordzy-cursors || exit
 ./install.sh
@@ -46,5 +48,11 @@ cd .. || exit
 rm -rf Nordzy-cursors
 cd "$builddir" || exit
 
-# Reboot
-reboot now
+# Install Inverse icon theme
+cd "/home/$username/Code" || exit
+git clone https://github.com/yeyushengfan258/Inverse-icon-theme.git
+cd Inverse-icon-theme || exit
+./install.sh -a
+cd .. || exit
+rm -rf Inverse-icon-theme
+cd "$builddir" || exit
