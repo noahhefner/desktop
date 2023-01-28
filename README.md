@@ -10,10 +10,17 @@ These scripts install and configure my desktop setup.
 # Installation
 
 1. Install Debian w/o DE. [Use this ISO](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/).
+  - On the "select and install software" screen, uncheck everything except "standard system utilities"
 2. [Install latest linux kernel](https://www.linuxcapable.com/how-to-install-latest-linux-kernel-on-debian-linux/).
+  - Run `update_kernel.sh`.
+  - Reboot.
 3. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
-  -  Run the `install_gnome.sh` script. Reboot.
-4. Run the `setup.sh` script.
+  - Run `install_gnome.sh`. 
+  - Reboot.
+4. Install Nix package manager.
+  - Run `install_nix.sh`.
+  - Reboot.
+4. Run the `setup.sh` script. Reboot.
 5. In gnome tweaks, set the cursor, icon pack, and fonts.
 6. Install the flatpaks in the `flatpaks.txt` file.
 

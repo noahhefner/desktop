@@ -14,6 +14,9 @@ mkdir -p "/home/$username/.config"
 mkdir -p "/home/$username/.fonts"
 mkdir -p "/home/$username/Code"
 
+# Some fixes
+apt install software-properties-common -y
+
 # Install CLI programs
 apt install git neofetch neovim unzip wget curl -y
 # Install other programs

@@ -10,7 +10,7 @@ fi
 apt update && apt upgrade -y
 
 # Install Gnome desktop environment
-apt -t unstable install gnome-session gnome-shell gnome-terminal gnome-backgrounds gnome-applets gnome-control-center mutter gjs
+apt -t unstable install gnome-session gnome-shell gnome-terminal gnome-backgrounds gnome-applets gnome-control-center mutter gjs -y
 
 # Print instructions
-echo "Gnome installed. Restart now."
+echo "Gnome has been installed. Restart now."

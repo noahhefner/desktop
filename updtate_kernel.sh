@@ -10,6 +10,8 @@ fi
 echo "deb http://deb.debian.org/debian unstable main contrib non-free" | sudo tee -a /etc/apt/sources.list
 echo "deb-src http://deb.debian.org/debian unstable main contrib non-free" | sudo tee -a /etc/apt/sources.list
 
+# TODO: Make all repositories contrib and non-free
+
 # Create apt pinning file
 tee /etc/apt/preferences<<EOF
 Package: *
