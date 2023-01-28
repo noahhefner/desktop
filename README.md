@@ -9,21 +9,15 @@ These scripts install and configure my desktop setup.
 
 # Installation
 
-1. Install Ubuntu 22.04 LTS Server
-  - Select the minimal install option during setup
-2. Run the `install_gnome.sh` script. Reboot.
-3. Run the `setup.sh` script.
-4. In gnome tweaks, set the cursor, icon pack, and fonts.
-5. Install the flatpaks in the `flatpaks.txt` file.
+1. Install Debian w/o DE. [Use this ISO](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/).
+2. [Install latest linux kernel](https://www.linuxcapable.com/how-to-install-latest-linux-kernel-on-debian-linux/).
+3. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
+  -  Run the `install_gnome.sh` script. Reboot.
+4. Run the `setup.sh` script.
+5. In gnome tweaks, set the cursor, icon pack, and fonts.
+6. Install the flatpaks in the `flatpaks.txt` file.
 
-scratch
-
-# Install
-- start w/ Ubuntu Server 22.04
-- chose ubuntu server minimized
-- update + upgrade
-- install gnome-sessions: `sudo apt install gnome-session gnome-terminal`
-- install [Flatpak](https://flatpak.org/setup/Ubuntu)
+# Kernel Install
 
 # GUI Tweaks and Apps
 - NordZ cursors

@@ -7,11 +7,10 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Update packages list and update system
-apt update
-apt upgrade -y
+apt update && apt upgrade -y
 
-# Install Gnome desktop + terminal
-apt install gnome-session gnome-terminal -y
+# Install Gnome desktop environment
+apt -t unstable install gnome-session gnome-shell gnome-terminal gnome-backgrounds gnome-applets gnome-control-center mutter gjs
 
 # Print instructions
-echo "Gnome installed, restart now."
+echo "Gnome installed. Restart now."

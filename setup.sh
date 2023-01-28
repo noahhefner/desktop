@@ -15,7 +15,7 @@ mkdir -p "/home/$username/.fonts"
 mkdir -p "/home/$username/Code"
 
 # Install CLI programs
-apt install git neofetch neovim unzip wget -y
+apt install git neofetch neovim unzip wget curl -y
 # Install other programs
 apt install gnome-tweaks nautilus -y
 
