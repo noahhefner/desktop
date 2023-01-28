@@ -10,8 +10,7 @@ fi
 rm /etc/apt/sources.list
 cp ./sources.list /etc/apt/sources.list
 
-# Update apt pinning file
-rm /etc/apt/preferences
+# Create apt pinning file
 cp ./preferences /etc/apt/preferences
 
 # Update and upgrade
