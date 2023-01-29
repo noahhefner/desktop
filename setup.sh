@@ -48,7 +48,9 @@ nix-env -iA \
   nixpkgs.sound-juicer \
   nixpkgs.picard \
   nixpkgs.onlyoffice-bin \
-  nixpkgs.gnome.nautilus
+  nixpkgs.gnome.nautilus \
+  nixpkgs.steam \
+  nixpkgs.system76-keyboard-configurator
 
 # Install Jetbrains Mono font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/JetBrainsMono.zip
