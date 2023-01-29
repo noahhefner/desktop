@@ -14,17 +14,41 @@ mkdir -p "/home/$username/.config"
 mkdir -p "/home/$username/.fonts"
 mkdir -p "/home/$username/Code"
 
-# Some fixes
-apt install software-properties-common -y
+# Install Nix package manager
+cd "/home/$username/Code" || exit
+apt install wget
+wget https://nixos.org/nix/install
+chmod +x ./install
+./install --daemon
+. /home/$username/.nix-profiles/etc/profile.d/nix.sh
+rm ./install
+cd "$builddir" || exit
 
-# Install CLI programs
-apt install git neofetch neovim unzip wget curl -y
-# Install other programs
-apt install gnome-tweaks nautilus -y
-
-# Install Flatpak
-apt install flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Install programs
+nix-env -iA \
+# CLU Utilities
+  nixpkgs.git \
+  nixpkgs.neofetch \
+  nixpkgs.neovim \
+  nixpkgs.unzip \
+  nixpkgs.wget \
+  nixpkgs.curl \
+  nixpkgs.stow \
+# Applications
+  nixpkgs.gnome.gnome-tweaks \
+  nixpkgs.bitwarden \
+  nixpkgs.brave \
+  nixpkgs.discord \
+  nixpkgs.spotify \
+  nixpkgs.bottles \
+  nixpkgs.vscodium \
+  nixpkgs.handbrake \
+  nixpkgs.joplin-desktop \
+  nixpkgs.virtualbox \
+  nixpkgs.sound-juicer \
+  nixpkgs.picard \
+  nixpkgs.onlyoffice-bin \
+  nixpkgs.gnome.nautilus
 
 # Install Jetbrains Mono font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/JetBrainsMono.zip
@@ -49,3 +73,6 @@ cd Inverse-icon-theme || exit
 cd .. || exit
 rm -rf Inverse-icon-theme
 cd "$builddir" || exit
+
+# Instructions
+echo "Setup complete. A reboot is required to see the apps installed from Nix in the Gnome launcher."
