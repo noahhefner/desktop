@@ -15,7 +15,7 @@ These scripts install and configure my desktop setup.
 2. [Install latest linux kernel](https://www.linuxcapable.com/how-to-install-latest-linux-kernel-on-debian-linux/).
   - Run `update_kernel.sh`.
   - Reboot.
-3. Install Nix package manager using `install_nix.sh`. No reboot is neccessary here.
+3. Install Nix package manager using `install_nix.sh`. Restart.
 4. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
   - Run `install_gnome.sh`. 
   - Reboot.
