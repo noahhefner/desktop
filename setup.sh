@@ -14,16 +14,6 @@ mkdir -p "/home/$username/.config"
 mkdir -p "/home/$username/.fonts"
 mkdir -p "/home/$username/Code"
 
-# Install Nix package manager
-cd "/home/$username/Code" || exit
-apt install wget
-wget https://nixos.org/nix/install
-chmod +x ./install
-./install --daemon
-. /home/$username/.nix-profiles/etc/profile.d/nix.sh
-rm ./install
-cd "$builddir" || exit
-
 # Install programs
 nix-env -iA \
 # CLU Utilities

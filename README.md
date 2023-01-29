@@ -2,9 +2,10 @@
 
 These scripts install and configure my desktop setup.
 
+- Base: Debian 11 w/ latest kernel
 - Desktop Environment: Gnome
 - Packages and Applications: git, neofetch, neovim, unzip, wget, gnome-tweaks, nautilus
-- Flatpak is installed
+- Nix package manager is installed
 - Appearance Tweaks: Nordzy cursors, Inverse icon themes
 
 # Installation
@@ -14,15 +15,12 @@ These scripts install and configure my desktop setup.
 2. [Install latest linux kernel](https://www.linuxcapable.com/how-to-install-latest-linux-kernel-on-debian-linux/).
   - Run `update_kernel.sh`.
   - Reboot.
-3. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
+3. Install Nix package manager using `install_nix.sh`. No reboot is neccessary here.
+4. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
   - Run `install_gnome.sh`. 
   - Reboot.
-4. Install Nix package manager.
-  - Run `install_nix.sh`.
-  - Reboot.
-4. Run the `setup.sh` script. Reboot.
-5. In gnome tweaks, set the cursor, icon pack, and fonts.
-6. Install the flatpaks in the `flatpaks.txt` file.
+5. Run the `setup.sh` script. Reboot.
+6. In gnome tweaks, set the cursor, icon pack, and fonts.
 
 # Kernel Install
 

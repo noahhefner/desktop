@@ -6,11 +6,16 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# Update packages list and update system
-apt update && apt upgrade -y
-
 # Install Gnome desktop environment
-apt -t unstable install gnome-session gnome-shell gnome-terminal gnome-backgrounds gnome-applets gnome-control-center mutter gjs -y
+nix-env -iA \
+  nixpkgs.gnome.gnome-session \
+  nixpkgs.gnome.gnome-shell \
+  nixpkgs.gnome.gnome-terminal \
+  nixpkgs.gnome.gnome-backgrounds \
+  nixpkgs.gnome.gnome-applets \
+  nixpkgs.gnome.gnome-control-center \
+  nixpkgs.gnome.mutter \ 
+  nixpkgs.gjs
 
 # Print instructions
 echo "Gnome has been installed. Restart now."
