@@ -26,9 +26,6 @@ apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks virtua
 # Add Flatpak remote repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Install Flatpaks
-xargs flatpak install flathub -y < flatpaks.txt
-
 # Install Jetbrains Mono font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d "/home/$username/.fonts"
@@ -54,4 +51,4 @@ rm -rf Inverse-icon-theme
 cd "$builddir" || exit
 
 # Instructions
-echo "Setup complete."
+echo "Setup complete. Reboot."

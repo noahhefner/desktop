@@ -19,6 +19,7 @@ These scripts install and configure my desktop setup.
   - Run `install_gnome.sh`. 
   - Reboot.
 4. Run the `setup.sh` script. Reboot.
+5. Run the `install_flatpaks.sh` script. Do not run as root.
 5. In gnome tweaks, set the cursor, icon pack, and fonts.
 
 # Kernel Install
