@@ -14,7 +14,7 @@ cp ./sources.list /etc/apt/sources.list
 cp ./preferences /etc/apt/preferences
 
 # Update and upgrade
-apt update && sudo apt upgrade -y
+apt update && sudo apt dist-upgrade -y
 
 # Print instructions
 echo "Linux kernel updated to latest version. Restart now."

@@ -21,8 +21,15 @@ cd "/home/$username/AppImages/System76KeyboardConfigurator"
 wget https://github.com/pop-os/keyboard-configurator/releases/download/v1.3.0/keyboard-configurator-1.3.0-x86_64.AppImage
 chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
 
-# Install programs from apt
-apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks virtualbox-6.1
+# Install packages from apt
+apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks virtualbox-6.1 aptitude pcscd
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install Nvidia drivers
+dpkg --add-architecture i386
+aptitude -r install nvidia-kernel-dkms nvidia-settings libgl1-nvidia-glx:i386
 
 # Add Flatpak remote repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

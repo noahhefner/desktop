@@ -7,3 +7,10 @@ com.brave.Browser
 com.spotify.Client
 com.usebottles.bottles
 com.valvesoftware.Steam
+org.gnome.Calendar
+org.gnome.SoundJuicer
+fr.handbrake.ghb
+net.davidotek.pupgui2
+org.gnome.Contacts
+org.gnome.Calculator
+com.yubico.yubioath
