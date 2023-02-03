@@ -4,12 +4,30 @@ username=$(id -u -n 1000)
 builddir=$(pwd)
 
 # Create directories
-mkdir -p "/home/$username/.config"
 mkdir -p "/home/$username/.fonts"
 mkdir -p "/home/$username/Code"
+mkdir -p "/home/$username/AppImages"
+mkdir -p "/home/$username/AppImages/System76KeyboardConfigurator"
 
-# Install programs
-nix-env -iA nixpkgs.git nixpkgs.neofetch nixpkgs.neovim nixpkgs.unzip nixpkgs.wget nixpkgs.curl nixpkgs.stow nixpkgs.gnome.gnome-tweaks nixpkgs.bitwarden nixpkgs.brave nixpkgs.discord nixpkgs.spotify nixpkgs.bottles nixpkgs.vscodium nixpkgs.handbrake nixpkgs.joplin-desktop nixpkgs.virtualbox nixpkgs.sound-juicer nixpkgs.picard nixpkgs.onlyoffice-bin nixpkgs.gnome.nautilus nixpkgs.steam nixpkgs.system76-keyboard-configurator
+# Add Oracle public key for Virtualbox
+wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
+apt update
+
+# System76 Launch Keyboard configurator
+cp ./system76KCicon.svg "/home/$username/AppImages/System76KeyboardConfigurator"
+cp ./.desktop "/home/$username/.local/share/applications"
+cd "/home/$username/AppImages/System76KeyboardConfigurator"
+wget https://github.com/pop-os/keyboard-configurator/releases/download/v1.3.0/keyboard-configurator-1.3.0-x86_64.AppImage
+chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
+
+# Install programs from apt
+apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks virtualbox-6.1
+
+# Add Flatpak remote repository
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Install Flatpaks
+xargs flatpak install flathub -y < flatpaks.txt
 
 # Install Jetbrains Mono font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/JetBrainsMono.zip
@@ -36,4 +54,4 @@ rm -rf Inverse-icon-theme
 cd "$builddir" || exit
 
 # Instructions
-echo "Setup complete. A reboot is required to see the apps installed from Nix in the Gnome launcher."
+echo "Setup complete."

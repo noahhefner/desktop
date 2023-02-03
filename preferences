@@ -1,35 +1,7 @@
 Package: *
-Pin: release a=bullseye
-Pin-Priority: 500
-
-Package: linux-image-amd64
 Pin: release a=unstable
 Pin-Priority: 1000
 
 Package: *
-Pin: release a=unstable
-Pin-Priority: 100
-
-Package: gnome-session
-Pin: release a=unstable
-Pin-Priority: 1000
-
-Package: gnome-backgrounds
-Pin: release a=unstable
-Pin-Priority: 1000
-
-Package: gnome-applets
-Pin: release a=unstable
-Pin-Priority: 1000
-
-Package: gnome-control-center
-Pin: release a=unstable
-Pin-Priority: 1000
-
-Package: mutter
-Pin: release a=unstable
-Pin-Priority: 1000
-
-Package: gjs
-Pin: release a=unstable
-Pin-Priority: 1000
+Pin: release a=bullseye
+Pin-Priority: 500

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=System76 Keyboard Configurator
+Comment=System76 Keyboard Configurator
+Icon=/home/nhefner/AppImages/System76KeyboardConfigurator/system76KCicon.svg
+Exec=/home/nhefner/AppImages/System76KeyboardConfigurator/keyboard-configurator-1.3.0-x86_64.AppImage
+Terminal=false

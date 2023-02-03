@@ -1,0 +1,9 @@
+com.bitwarden.desktop
+com.spotify.Client
+com.vscodium.codium
+net.cozic.joplin_desktop
+org.onlyoffice.desktopeditors
+com.brave.Browser
+com.spotify.Client
+com.usebottles.bottles
+com.valvesoftware.Steam

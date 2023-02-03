@@ -18,9 +18,8 @@ These scripts install and configure my desktop setup.
 3. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
   - Run `install_gnome.sh`. 
   - Reboot.
-4. Install Nix package manager using `install_nix.sh`. Restart.
-5. Run the `setup.sh` script. Reboot.
-6. In gnome tweaks, set the cursor, icon pack, and fonts.
+4. Run the `setup.sh` script. Reboot.
+5. In gnome tweaks, set the cursor, icon pack, and fonts.
 
 # Kernel Install
 
