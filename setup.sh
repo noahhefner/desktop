@@ -18,7 +18,7 @@ wget https://github.com/pop-os/keyboard-configurator/releases/download/v1.3.0/ke
 chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
 
 # Install packages from apt
-apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1
+apt install sshpass flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

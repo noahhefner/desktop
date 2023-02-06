@@ -14,3 +14,4 @@ net.davidotek.pupgui2
 org.gnome.Contacts
 org.gnome.Calculator
 com.yubico.yubioath
+org.musicbrainz.Picard
