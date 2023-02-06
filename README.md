@@ -49,3 +49,6 @@ These scripts install and configure my desktop setup.
 # Post install
 - set jetbrains font for all fonts in tweaks
 - install flatpaks `
+
+# Misc notes
+- [Installing Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)

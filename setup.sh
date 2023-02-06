@@ -10,10 +10,6 @@ mkdir -p "/home/$username/AppImages"
 mkdir -p "/home/$username/.local/share/wallpapers"
 mkdir -p "/home/$username/AppImages/System76KeyboardConfigurator"
 
-# Add Oracle public key for Virtualbox
-wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
-apt update
-
 # System76 Launch Keyboard configurator
 cp ./system76KCicon.svg "/home/$username/AppImages/System76KeyboardConfigurator"
 cp ./.desktop "/home/$username/.local/share/applications"
@@ -22,14 +18,14 @@ wget https://github.com/pop-os/keyboard-configurator/releases/download/v1.3.0/ke
 chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
 
 # Install packages from apt
-apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks virtualbox-6.1 aptitude pcscd
+apt install flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Install Nvidia drivers
-dpkg --add-architecture i386
-aptitude -r install nvidia-kernel-dkms nvidia-settings libgl1-nvidia-glx:i386
+#dpkg --add-architecture i386
+#aptitude -r install nvidia-kernel-dkms nvidia-settings libgl1-nvidia-glx:i386
 
 # Add Flatpak remote repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

@@ -6,6 +6,9 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# Add Oracle public key for Virtualbox
+wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg
+
 # Update packages sources
 rm /etc/apt/sources.list
 cp ./sources.list /etc/apt/sources.list
