@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 
 username=$(id -u -n 1000)
 builddir=$(pwd)
@@ -52,6 +52,15 @@ cd Inverse-icon-theme || exit
 ./install.sh -a
 cd .. || exit
 rm -rf Inverse-icon-theme
+cd "$builddir" || exit
+
+# Install Fluent GTK Theme
+cd "/home/$username/Code" || exit
+git clone https://github.com/vinceliuice/Fluent-gtk-theme.git
+cd Fluent-gtk-theme || exit
+./install.sh
+cd .. || exit
+rm -rf Fluent-gtk-theme
 cd "$builddir" || exit
 
 # Instructions

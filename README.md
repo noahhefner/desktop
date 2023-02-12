@@ -50,5 +50,27 @@ These scripts install and configure my desktop setup.
 - set jetbrains font for all fonts in tweaks
 - install flatpaks `
 
-# Misc notes
+# Fix Wifi networks not showing in Gnome Settings
+
+In `/etc/NetworkManager/NetworkManager.conf`, set managed to true:
+```
+[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=true
+```
+
+In `/etc/network/interfaces`, remove everything except the following:
+```
+auto lo
+iface lo inet loopback
+```
+
+Restart Network Manager:
+`sudo service NetworkManager restart`
+
+Reboot and wifi should work.
+
+# Other Notes
 - [Installing Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)
