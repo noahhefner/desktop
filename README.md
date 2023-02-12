@@ -2,11 +2,7 @@
 
 These scripts install and configure my desktop setup.
 
-- Base: Debian 11 w/ latest kernel
-- Desktop Environment: Gnome
-- Packages and Applications: git, neofetch, neovim, unzip, wget, gnome-tweaks, nautilus
-- Nix package manager is installed
-- Appearance Tweaks: Nordzy cursors, Inverse icon themes
+![screenshot_1](/screenshot_1.png)
 
 # Installation
 
@@ -20,14 +16,12 @@ These scripts install and configure my desktop setup.
   - Reboot.
 4. Run the `setup.sh` script. Reboot.
 5. Run the `install_flatpaks.sh` script. Do not run as root.
-5. In gnome tweaks, set the cursor, icon pack, and fonts.
-
-# Kernel Install
 
 # GUI Tweaks and Apps
 - NordZ cursors
 - Gnome files
-- Use Jetbrains mono font everywhere
+- Jetbrains Nerd Font
+- Inverse Icon Pack
 
 # Flatpak Applications
 - Brave
@@ -40,17 +34,42 @@ These scripts install and configure my desktop setup.
 - OnlyOffice
 - MusicBrainz Picard
 - Steam
+- Flatseal
+- Bottles
+- Gnome Calendar
+- Handbrake
+- ProtonUp-Qt
+- Gnome Contacts
+- Yubico Authenticator
 
-# Other apps
-- git
-- neovim
-- neofetch
+# Other tools
+- sshpass 
+- flatpak 
+- git 
+- neofetch 
+- neovim 
+- unzip 
+- wget 
+- curl 
+- stow 
+- gnome-tweaks 
+- aptitude 
+- pcscd 
+- virtualbox-6.1 
+- ansible 
+- grub-customizer
 
-# Post install
-- set jetbrains font for all fonts in tweaks
-- install flatpaks `
+# Manual Post-Install Steps
+- In Gnome Tweak Tool:
+  - Set Jetbrains Mono Nerd Font for all fonts.
+  - Set Nordzy Cusrors for cursors.
+  - Set Inverse Icon Pack for icons.
+  - Set Fluent as GTK theme.
+- Set Grub Theme:
+  - `setup.sh` has already cloned the repository to `~/Code/distro-grub-themes`. 
+  - Use Grub Customizer to set the theme to `themes/debian.tar`.
 
-# Fix Wifi networks not showing in Gnome Settings
+## Fix Wifi networks not showing in Gnome Settings
 
 [Helpfull Stack Overflow post](https://askubuntu.com/questions/71159/network-manager-says-device-not-managed)
 
@@ -73,6 +92,14 @@ Restart Network Manager:
 `sudo service NetworkManager restart`
 
 Reboot and wifi should work.
+
+## Yubikey Not Recognized in Yubico Authenticator
+
+Probably caused by `pcscd` service not running. To enable it:
+```
+sudo service pcscd enable
+sudo service pcscd start
+```
 
 # Other Notes
 - [Installing Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)

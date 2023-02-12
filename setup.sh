@@ -18,14 +18,10 @@ wget https://github.com/pop-os/keyboard-configurator/releases/download/v1.3.0/ke
 chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
 
 # Install packages from apt
-apt install sshpass flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible
+apt install sshpass flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible grub-customizer
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Install Nvidia drivers
-#dpkg --add-architecture i386
-#aptitude -r install nvidia-kernel-dkms nvidia-settings libgl1-nvidia-glx:i386
 
 # Add Flatpak remote repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -62,6 +58,29 @@ cd Fluent-gtk-theme || exit
 cd .. || exit
 rm -rf Fluent-gtk-theme
 cd "$builddir" || exit
+
+# Clone theme repo for Grub Customizer
+cd "/home/$username/Code" || exit
+git clone https://github.com/AdisonCavani/distro-grub-themes.git
+
+# Add light/dark mode wallpaper combo to settings
+mkdir -p "/home/$username/.local/share/gnome-background/properties" || exit
+touch "/home/$username/.local/share/gnome-background/properties/adwaita.xml.in" || exit
+cat <<EOF >/home/$username/.local/share/gnome-background/properties/adwaita.xml.in
+<?xml version="1.0"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>Yosemite Backgrounds</name>
+    <filename>$builddir/yosemite.jpg</filename>
+    <filename-dark>$builddir/yosemite_dark.jpg</filename-dark>
+    <options>zoom</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#3071AE</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+</wallpapers>
+EOF
 
 # Instructions
 echo "Setup complete. Reboot."
