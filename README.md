@@ -52,6 +52,8 @@ These scripts install and configure my desktop setup.
 
 # Fix Wifi networks not showing in Gnome Settings
 
+[Helpfull Stack Overflow post](https://askubuntu.com/questions/71159/network-manager-says-device-not-managed)
+
 In `/etc/NetworkManager/NetworkManager.conf`, set managed to true:
 ```
 [main]
