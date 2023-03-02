@@ -18,7 +18,9 @@ wget https://github.com/pop-os/keyboard-configurator/releases/download/v1.3.0/ke
 chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
 
 # Install packages from apt
-apt install sshpass flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible grub-customizer
+# llvmpipe - fixes Halo Infinite launch issue
+# pcscd - required by Yubico Authenticator
+apt install sshpass flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible grub-customizer llvmpipe steam-devices
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -32,13 +34,13 @@ unzip JetBrainsMono.zip -d "/home/$username/.fonts"
 # Delete zip file
 rm JetBrainsMono.zip
 
-# Install Nordzy cursor
+# Install Vimix cursors
 cd "/home/$username/Code" || exit
-git clone https://github.com/alvatip/Nordzy-cursors
-cd Nordzy-cursors || exit
+git clone https://github.com/vinceliuice/Vimix-cursors.git
+cd Vimix-cursors || exit
 ./install.sh
 cd .. || exit
-rm -rf Nordzy-cursors
+rm -rf Vimix-cursors
 cd "$builddir" || exit
 
 # Install Inverse icon theme
