@@ -1,8 +1,10 @@
 # Desktop
 
-These scripts install and configure my desktop setup.
+These scripts install and configure my desktop setup. Debian testing is used for the base system. The desktop environment is vanilla Gnome. My commonly used apps are installed via Flatpak.
 
-![screenshot_1](/screenshot_1.png)
+![screenshot_1](/assets/screenshot_1.png)
+
+![screenshot_2](/assets/screenshot_2.png)
 
 # Installation
 
@@ -18,10 +20,9 @@ These scripts install and configure my desktop setup.
 5. Run the `install_flatpaks.sh` script. Do not run as root.
 
 # GUI Tweaks and Apps
-- NordZ cursors
-- Gnome files
+- Vimix cursors
 - Jetbrains Nerd Font
-- Inverse Icon Pack
+- Qogir Icon Pack
 
 # Flatpak Applications
 - Brave
