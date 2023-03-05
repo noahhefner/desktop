@@ -77,9 +77,9 @@ cd "$builddir" || exit
 # Add light/dark mode wallpaper combo to settings
 # Note: Need to set the wallpaper manually in settings
 echo "Configuring custom light/dark mode wallpaper."
-mkdir -p "/home/$username/.local/share/gnome-background/properties" || exit
-touch "/home/$username/.local/share/gnome-background/properties/adwaita.xml.in" || exit
-cat <<EOF >/home/$username/.local/share/gnome-background/properties/adwaita.xml.in
+mkdir -p "/home/$username/.local/share/gnome-background-properties" || exit
+touch "/home/$username/.local/share/gnome-background-properties/adwaita.xml.in" || exit
+cat <<EOF >/home/$username/.local/share/gnome-background-properties/adwaita.xml.in
 <?xml version="1.0"?>
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
