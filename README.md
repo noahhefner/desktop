@@ -8,23 +8,18 @@ These scripts install and configure my desktop setup. Debian testing is used for
 
 # Installation
 
-1. Install Debian w/o DE. [Use this ISO](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/).
-  - On the "select and install software" screen, uncheck everything except "standard system utilities"
-2. [Install latest linux kernel](https://www.linuxcapable.com/how-to-install-latest-linux-kernel-on-debian-linux/).
-  - Run `update_kernel.sh`.
-  - Reboot.
-3. [Install latest gnome](https://raspberrytips.com/latest-gnome-installation-debian/).
-  - Run `install_gnome.sh`. 
-  - Reboot.
-4. Run the `setup.sh` script. Reboot.
-5. Run the `install_flatpaks.sh` script. Do not run as root.
+1. Install Debian w/o DE. [Use this ISO](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/). On the "select and install software" screen, uncheck everything except "standard system utilities"
+2. Run `step_1.sh` as root. Reboot.
+3. Run `step_2.sh` as root. Reboot.
+4. Run `step_3.sh` as root. Reboot.
+5. Run `step_4.sh` as user.
 
-# GUI Tweaks and Apps
+## GUI Tweaks and Apps
 - Vimix cursors
 - Jetbrains Nerd Font
 - Qogir Icon Pack
 
-# Flatpak Applications
+## Flatpak Applications
 - Brave
 - Spotify
 - Joplin
@@ -43,7 +38,7 @@ These scripts install and configure my desktop setup. Debian testing is used for
 - Gnome Contacts
 - Yubico Authenticator
 
-# Other tools
+## Other tools
 - sshpass 
 - flatpak 
 - git 
@@ -63,12 +58,14 @@ These scripts install and configure my desktop setup. Debian testing is used for
 # Manual Post-Install Steps
 - In Gnome Tweak Tool:
   - Set Jetbrains Mono Nerd Font for all fonts.
-  - Set Nordzy Cusrors for cursors.
-  - Set Inverse Icon Pack for icons.
+  - Set Vimix Cusrors for cursors.
+  - Set Qogir Icon Pack for icons.
   - Set Fluent as GTK theme.
 - Set Grub Theme:
-  - `setup.sh` has already cloned the repository to `~/Code/distro-grub-themes`. 
+  - `step_3.sh` has already cloned the repository to `~/Code/distro-grub-themes`. 
   - Use Grub Customizer to set the theme to `themes/debian.tar`.
+
+# Troubleshooting
 
 ## Fix Wifi networks not showing in Gnome Settings
 
