@@ -22,7 +22,7 @@ chmod +x keyboard-configurator-1.3.0-x86_64.AppImage
 # Install packages from apt
 # pcscd - required by Yubico Authenticator
 echo "Installing packages from apt."
-apt install sshpass flatpak git neofetch neovim unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible grub-customizer steam-devices
+apt install sshpass flatpak git neofetch unzip wget curl stow gnome-tweaks aptitude pcscd virtualbox-6.1 ansible grub-customizer steam-devices
 
 # Install Rust
 echo "Installing Rust."
