@@ -63,8 +63,10 @@ These scripts install and configure my desktop setup. Debian testing is used for
   - Add Debian testing source to apt `sources.list` file. Add source for Oracle Virtualbox.
   - Create an apt pinning file to use testing source as first priority.
   - Perform `apt update` and `apt dist-upgrade`.
+
 `step_2.sh`
   - Install vanilla Gnome desktop environment.
+
 `step_3.sh`
   - Create home directories.
   - Install System76 keyboard configurator via AppImage.
@@ -77,6 +79,7 @@ These scripts install and configure my desktop setup. Debian testing is used for
   - Download and install Fluent GTK theme.
   - Clone grub theme repository to `Code` directory.
   - Setup a custom light/dark mode wallpaper.
+
 `step_4.sh`
   - Install Flatpaks.
 
