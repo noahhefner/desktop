@@ -6,14 +6,6 @@ These scripts install and configure my desktop setup. Debian testing is used for
 
 ![screenshot_2](/assets/screenshot_2.png)
 
-# Installation
-
-1. Install Debian w/o DE. [Use this ISO](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/). On the "select and install software" screen, uncheck everything except "standard system utilities"
-2. Run `step_1.sh` as root. Reboot.
-3. Run `step_2.sh` as root. Reboot.
-4. Run `step_3.sh` as root. Reboot.
-5. Run `step_4.sh` as user.
-
 ## GUI Tweaks and Apps
 - Vimix cursors
 - Jetbrains Nerd Font
@@ -37,6 +29,7 @@ These scripts install and configure my desktop setup. Debian testing is used for
 - ProtonUp-Qt
 - Gnome Contacts
 - Yubico Authenticator
+- Foliate
 
 ## Other tools
 - sshpass 
@@ -55,7 +48,39 @@ These scripts install and configure my desktop setup. Debian testing is used for
 - ansible 
 - grub-customizer
 
-# Manual Post-Install Steps
+# Automated Installation
+
+1. Install Debian w/o DE. [Use this ISO](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/). On the "select and install software" screen, uncheck everything except "standard system utilities"
+2. Run `step_1.sh` as root. Reboot.
+3. Run `step_2.sh` as root. Reboot.
+4. Run `step_3.sh` as root. Reboot.
+5. Run `step_4.sh` as user.
+
+## Script Descriptions
+
+`step_1.sh`
+  - Add public key for Oracle Virtualbox installation.
+  - Add Debian testing source to apt `sources.list` file. Add source for Oracle Virtualbox.
+  - Create an apt pinning file to use testing source as first priority.
+  - Perform `apt update` and `apt dist-upgrade`.
+`step_2.sh`
+  - Install vanilla Gnome desktop environment.
+`step_3.sh`
+  - Create home directories.
+  - Install System76 keyboard configurator via AppImage.
+  - Install apt packages listed above.
+  - Install Rust.
+  - Add Flatpak remote repository.
+  - Download and install Jetbrains Mono font.
+  - Download and install Vimix Cursors.
+  - Download and install Qogir Icon pack.
+  - Download and install Fluent GTK theme.
+  - Clone grub theme repository to `Code` directory.
+  - Setup a custom light/dark mode wallpaper.
+`step_4.sh`
+  - Install Flatpaks.
+
+# Post-Install Steps
 - In Gnome Tweak Tool:
   - Set Jetbrains Mono Nerd Font for all fonts.
   - Set Vimix Cusrors for cursors.
@@ -69,7 +94,7 @@ These scripts install and configure my desktop setup. Debian testing is used for
 
 ## Fix Wifi networks not showing in Gnome Settings
 
-[Helpfull Stack Overflow post](https://askubuntu.com/questions/71159/network-manager-says-device-not-managed)
+Helpfull Stack Overflow post [here](https://askubuntu.com/questions/71159/network-manager-says-device-not-managed).
 
 In `/etc/NetworkManager/NetworkManager.conf`, set managed to true:
 ```
