@@ -15,3 +15,4 @@ org.gnome.Contacts
 org.gnome.Calculator
 com.yubico.yubioath
 org.musicbrainz.Picard
+com.github.johnfactotum.Foliate
